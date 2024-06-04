@@ -192,7 +192,7 @@ def auslastung_7_tage():
                 reservierungen
             WHERE
                 status = 'active'
-                AND reservierungsdatum BETWEEN CURRENT_DATE AND CURRENT_DATE + interval '6 days';
+                AND reservierungsdatum BETWEEN CURRENT_DATE AND CURRENT_DATE + interval '7 days';
         """
 
         cursor.execute(query)
