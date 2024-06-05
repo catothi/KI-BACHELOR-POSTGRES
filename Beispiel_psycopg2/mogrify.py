@@ -2,10 +2,11 @@
 import psycopg2
 
 # Forming connection
+#Passwörter im produktiven Kontext als Umgebungsvariable anziehen lassen in CI/CD Pipeline 
 conn = psycopg2.connect(
     database="psy_demo",
     user='postgres',
-    password='cato',
+    password='***',
     host='127.0.0.1',
     port='5432'
 )
