@@ -10,10 +10,13 @@ app = Flask(__name__)
 
 # Hinweis: Das Passwort in Produktion per CI/CD Pipeline setzen
 def get_db_connection():
+    db_password = os.getenv('DB_PASSWORD')
+    if db_password is None:
+        raise ValueError("Das Datenbankpasswort wurde nicht als Umgebungsvariable gesetzt.")
     conn = psycopg2.connect(
         dbname='reservierung_db',
         user='postgres',
-        password='***',
+        password=db_password,
         host='localhost',
         port='5432'
     )
