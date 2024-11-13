@@ -9,6 +9,7 @@ app = Flask(__name__)
 # Database connection
 
 # Hinweis: Das Passwort in Produktion per CI/CD Pipeline setzen
+# In Windows set DB_PASSWORD=dein_passwort in cmd , in Linux Shell export DB_PASSWORD=dein_passwort
 def get_db_connection():
     db_password = os.getenv('DB_PASSWORD')
     if db_password is None:
